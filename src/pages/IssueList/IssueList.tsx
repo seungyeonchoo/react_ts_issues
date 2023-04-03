@@ -1,16 +1,18 @@
 import { useSelector } from 'react-redux';
 import useFetch from '../../hooks/useFetch';
 import { ReducerType } from '../../store';
+import { Issue } from '../../types/dataTypes';
+import Item from './components/Item';
 
 const IssueList = () => {
   const { issueParams } = useSelector((state: ReducerType) => state.params);
   const { data } = useFetch('/issues', issueParams);
   return (
-    <ul>
-      {data?.map((el: any) => (
-        <li key={el.id}>{el.title}</li>
+    <section className="h-[520px] flex flex-col items-center py-3 overflow-auto">
+      {data?.map((issue: Issue) => (
+        <Item key={issue.id} issue={issue} />
       ))}
-    </ul>
+    </section>
   );
 };
 
