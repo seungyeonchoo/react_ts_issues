@@ -1,13 +1,18 @@
-import './App.css';
+import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header';
 import IssueDetail from './pages/IssueDetail/IssueDetail';
 import IssueList from './pages/IssueList/IssueList';
 
 function App() {
   return (
-    <main className="flex">
-      <IssueList />
-      <IssueDetail />
-    </main>
+    <>
+      <Header />
+      <main className="flex">
+        <IssueList />
+        <IssueDetail />
+      </main>
+      <Footer />
+    </>
   );
 }
 
