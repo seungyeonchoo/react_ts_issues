@@ -12,7 +12,7 @@ const useInput = <T>(initialInput: T) => {
     setInput(initialInput);
   };
 
-  return [input, handleInputChange, reset];
+  return { input, handleInputChange, reset };
 };
 
 export default useInput;

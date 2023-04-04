@@ -3,11 +3,11 @@ import { useState } from 'react';
 const useToggle = (initialToggle = false) => {
   const [toggle, setToggle] = useState(initialToggle);
 
-  const handleToggle = () => {
+  const handleToggle: () => void = () => {
     setToggle(!toggle);
   };
 
-  return [toggle, handleToggle];
+  return { toggle, handleToggle };
 };
 
 export default useToggle;
