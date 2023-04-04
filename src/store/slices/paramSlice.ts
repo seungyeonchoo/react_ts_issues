@@ -3,9 +3,10 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialIssueParams = {
   page: 1,
   per_page: 10,
-  sort: 'updated',
+  sort: 'created',
   direction: 'asc',
   state: 'open',
+  creator: '',
 };
 
 const paramSlice = createSlice({
@@ -14,11 +15,11 @@ const paramSlice = createSlice({
   initialState: { issueParams: initialIssueParams },
 
   reducers: {
-    updateIssueParams: (state, action) => {
+    updateIssueParam: (state, action) => {
       state.issueParams = { ...state.issueParams, ...action.payload };
     },
   },
 });
 
-export const { updateIssueParams } = paramSlice.actions;
+export const { updateIssueParam } = paramSlice.actions;
 export default paramSlice.reducer;
