@@ -1,17 +1,29 @@
 import { useSelector } from 'react-redux';
-import useFetch from '../../hooks/useFetch';
 import { ReducerType } from '../../store';
+
+import useFetch from '../../hooks/useFetch';
+
 import { Issue } from '../../types/dataTypes';
+
 import Item from './components/Item';
+import ToolBar from './components/ToolBar';
 
 const IssueList = () => {
-  const { issueParams } = useSelector((state: ReducerType) => state.params);
-  const { data } = useFetch('/issues', issueParams);
+  const { params, toggle } = useSelector((state: ReducerType) => state);
+  const { data } = useFetch('/issues', params.issueParams);
+
+  const containerStyle = toggle.detailToggle
+    ? 'relative h-[520px] w-full flex flex-col items-center overflow-auto m-auto'
+    : 'relative h-[520px] w-full flex flex-col items-center overflow-auto m-auto';
+
   return (
-    <section className="h-[520px] flex flex-col items-center py-3 overflow-auto">
-      {data?.map((issue: Issue) => (
-        <Item key={issue.id} issue={issue} />
-      ))}
+    <section className={containerStyle}>
+      <ToolBar />
+      <section className="h-[450px] w-full flex flex-col items-center py-2 overflow-auto border-b">
+        {data?.map((issue: Issue) => (
+          <Item key={issue.id} issue={issue} />
+        ))}
+      </section>
     </section>
   );
 };
