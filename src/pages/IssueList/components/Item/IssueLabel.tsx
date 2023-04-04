@@ -9,7 +9,7 @@ const IssueLabel = ({ labels }: Props) => {
     <ul className="flex text-[1px]">
       {labels.map(label => (
         <li className="mr-1 text-white bg-slate-600 py-[3px] px-2 rounded-md" key={label.id}>
-          {label.name}
+          {label.name.split(':')[0]}
         </li>
       ))}
     </ul>
