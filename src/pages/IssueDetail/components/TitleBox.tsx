@@ -9,7 +9,7 @@ interface Props {
 
 const TitleBox = ({ issue }: Props) => {
   return (
-    <section className="flex justify-between px-3 mb-3">
+    <section className="flex justify-between px-3 mb-3 border-t border-b py-3">
       <IssueInfo
         title={issue?.title}
         created_date={issue?.created_at}

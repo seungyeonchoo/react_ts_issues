@@ -42,7 +42,7 @@ export interface Reactions {
   eyes: number;
 }
 
-export interface Root {
+export interface Issue {
   url: string;
   repository_url: string;
   labels_url: string;
@@ -72,4 +72,19 @@ export interface Root {
   timeline_url: string;
   performed_via_github_app: any;
   state_reason: any;
+}
+
+export interface Comment {
+  url: string;
+  html_url: string;
+  issue_url: string;
+  id: number;
+  node_id: string;
+  user: User;
+  created_at: string;
+  updated_at: string;
+  author_association: string;
+  body: string;
+  reactions: Reactions;
+  performed_via_github_app: any;
 }
