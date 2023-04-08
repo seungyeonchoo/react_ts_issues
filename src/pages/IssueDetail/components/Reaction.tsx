@@ -7,7 +7,7 @@ interface Props {
 
 const Reaction = ({ reactions }: Props) => {
   return (
-    <section className="flex justify-between items-center px-5 my-5 text-xs">
+    <section className="w-4/5 m-auto flex justify-between items-center px-10 my-5 text-xs bg-gray-50 py-3 rounded-xl">
       <ReactionItem reaction={reactions['+1']} emoji="👍" />
       <ReactionItem reaction={reactions['-1']} emoji="👎" />
       <ReactionItem reaction={reactions.laugh} emoji="😄" />

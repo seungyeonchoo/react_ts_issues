@@ -1,14 +1,18 @@
 import { useDispatch, useSelector } from 'react-redux';
-import useFetch from '../../hooks/useFetch';
 import { AppDispatch, ReducerType } from '../../store';
-import ReactMarkdown from 'react-markdown';
 import { offDetailToggle } from '../../store/slices/toggleSlice';
+
+import useFetch from '../../hooks/useFetch';
+
 import { ReactComponent as Back } from '../../assets/left-long-solid.svg';
+import ReactMarkdown from 'react-markdown';
+import '../../../node_modules/github-markdown-css/github-markdown-light.css';
+
 import TitleBox from './components/TitleBox';
 import Labels from './components/Labels';
-import '../../../node_modules/github-markdown-css/github-markdown-light.css';
 import Reaction from './components/Reaction';
 import IssueComment from './components/IssueComment';
+
 const IssueDetail = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { detailId } = useSelector((state: ReducerType) => state.toggle);
@@ -41,10 +45,3 @@ const IssueDetail = () => {
 };
 
 export default IssueDetail;
-
-// "laugh": 0,
-// "hooray": 0,
-// "confused": 0,
-// "heart": 0,
-// "rocket": 0,
-// "eyes": 0

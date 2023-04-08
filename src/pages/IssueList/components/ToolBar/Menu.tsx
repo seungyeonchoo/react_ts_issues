@@ -1,9 +1,12 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
+
 import { useDispatch } from 'react-redux';
-import { ReactComponent as Sort } from '../../../../assets/sort-solid.svg';
-import useInput from '../../../../hooks/useInput';
 import { AppDispatch } from '../../../../store';
 import { updateIssueParam } from '../../../../store/slices/paramSlice';
+
+import useInput from '../../../../hooks/useInput';
+
+import { ReactComponent as Sort } from '../../../../assets/sort-solid.svg';
 
 interface Props {
   handleSortToggle: () => void;
@@ -31,7 +34,10 @@ const Menu = ({ handleSortToggle }: Props) => {
         value={input.creator || ''}
         onChange={handleInputChange}
       />
-      <Sort className="w-3" onClick={handleSortToggle} />
+      <Sort
+        className="w-3 fill-gray-500 cursor-pointer hover:fill-gray-800"
+        onClick={handleSortToggle}
+      />
     </section>
   );
 };
