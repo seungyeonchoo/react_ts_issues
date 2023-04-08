@@ -1,14 +1,16 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, ReducerType } from '../../../store';
 import { onDetailToggle, updateDetailId } from '../../../store/slices/toggleSlice';
+
 import { Issue } from '../../../types/dataTypes';
+
 import IssueDate from './Item/IssueInfo';
-import IssueLabel from './Item/IssueLabel';
 import IssueTitle from './Item/IssueTitle';
 
 const Item = ({ issue }: { issue: Issue }) => {
   const dispatch = useDispatch<AppDispatch>();
   const { detailToggle, detailId } = useSelector((state: ReducerType) => state.toggle);
+
   const handleDetailToggle = () => {
     dispatch(updateDetailId(issue.number));
     dispatch(onDetailToggle());

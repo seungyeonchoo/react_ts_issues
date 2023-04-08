@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialIssueParams = {
-  page: 1,
-  per_page: 10,
+  //   page: 1,
+  //   per_page: 20,
   sort: 'created',
   direction: 'asc',
   state: 'open',
