@@ -12,29 +12,25 @@ import TitleBox from './components/TitleBox';
 import Labels from './components/Labels';
 import Reaction from './components/Reaction';
 import IssueComment from './components/IssueComment';
+import Loading from '../../components/Loading/Loading';
 
 const IssueDetail = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { detailId } = useSelector((state: ReducerType) => state.toggle);
-  const { data, isLoading } = useFetch(`/issues/${detailId}`);
+  const { data, isLoading, error, isError } = useFetch(`/issues/${detailId}`);
   const { data: comments } = useFetch(`/issues/${detailId}/comments`);
 
   const handleDetailOff = () => {
     dispatch(offDetailToggle());
   };
 
-  if (isLoading)
-    return (
-      <section className="h-[520px] w-11/12 m-auto flex flex-col py-3 max-lg:absolute bg-white">
-        로딩중
-      </section>
-    );
+  if (isLoading) return <Loading />;
 
   return (
-    <section className="h-[520px] w-full flex flex-col p-3 max-lg:absolute max-lg:w-11/12 bg-white">
-      <Back className="w-6 mb-3" onClick={handleDetailOff} />
+    <section className="container_detail">
+      <Back className="icon w-6 mb-3" onClick={handleDetailOff} />
       <TitleBox issue={data} />
-      <section className="markdown-body mx-auto h-[480px] overflow-auto">
+      <section className="markdown-body px-5 mx-auto h-[480px] overflow-auto">
         <ReactMarkdown className="text-xs py-5">{data?.body}</ReactMarkdown>
         <Labels labels={data?.labels} />
         <Reaction reactions={data?.reactions} />

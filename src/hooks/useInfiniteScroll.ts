@@ -9,7 +9,7 @@ const useInfiniteScroll = (url: string, params?: object) => {
 
   const [ref, inView] = useInView();
 
-  const { data, isLoading, isError, hasNextPage, fetchNextPage } = useInfiniteQuery(
+  const { data, isLoading, isError, error, hasNextPage, fetchNextPage } = useInfiniteQuery(
     [url.slice(1), params],
     fetchData,
     {
@@ -27,7 +27,7 @@ const useInfiniteScroll = (url: string, params?: object) => {
     }
   }, [inView, fetchNextPage, hasNextPage]);
 
-  return { ref, data, isLoading, isError, hasNextPage };
+  return { ref, data, isLoading, isError, hasNextPage, error };
 };
 
 export default useInfiniteScroll;

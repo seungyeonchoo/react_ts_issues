@@ -25,19 +25,16 @@ const Menu = ({ handleSortToggle }: Props) => {
   }, [input]);
 
   return (
-    <section className="realative border-b w-full h-[60px] flex items-center justify-between">
+    <section className="box_menu">
       <input
         type="text"
-        className="border w-1/2 text-xs p-2 focus:outline-gray-400"
+        className="search-input"
         placeholder="Search Creator"
         name="creator"
-        value={input.creator || ''}
+        value={input.creator}
         onChange={handleInputChange}
       />
-      <Sort
-        className="w-3 fill-gray-500 cursor-pointer hover:fill-gray-800"
-        onClick={handleSortToggle}
-      />
+      <Sort className="icon w-3" onClick={handleSortToggle} />
     </section>
   );
 };
