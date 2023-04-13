@@ -2,7 +2,7 @@
 
 ## Demo
 
-https://s3.console.aws.amazon.com/s3/buckets/react-typescript-issue-list?region=eu-west-2&tab=properties
+http://react-typescript-issue-list.s3-website.eu-west-2.amazonaws.com/
 
 ## Quick Start
 
@@ -48,6 +48,85 @@ yarn start
 > ## Directories
 
 ```
+
+src
+ |-App.tsx
+ |-assets
+ | |-circle-exclamation-solid.svg
+ | |-comment-solid.svg
+ | |-down-long-solid.svg
+ | |-filter-solid.svg
+ | |-github.svg
+ | |-left-long-solid.svg
+ | |-linkedin-in.svg
+ | |-sort-down-solid.svg
+ | |-sort-solid.svg
+ | |-sort-up-solid.svg
+ | |-spinner-solid.svg
+ | |-up-long-solid.svg
+ |-components
+ | |-Error
+ | | |-Error.tsx
+ | |-Footer
+ | | |-Footer.tsx
+ | |-Header
+ | | |-Header.tsx
+ | |-Loading
+ | | |-Loading.tsx
+ |-hooks
+ | |-useFetch.ts
+ | |-useInfiniteScroll.ts
+ | |-useInput.ts
+ | |-useToggle.ts
+ |-index.css
+ |-index.tsx
+ |-pages
+ | |-IssueDetail
+ | | |-IssueDetail.tsx
+ | | |-components
+ | | | |-IssueComment
+ | | | | |-CommentBody.tsx
+ | | | | |-CommentInfo.tsx
+ | | | | |-CommentItem.tsx
+ | | | |-IssueComment.tsx
+ | | | |-Labels
+ | | | | |-LabelItem.tsx
+ | | | |-Labels.tsx
+ | | | |-Reaction
+ | | | | |-ReactionItem.tsx
+ | | | |-Reaction.tsx
+ | | | |-TitleBox
+ | | | | |-IssueInfo.tsx
+ | | | | |-UserInfo.tsx
+ | | | |-TitleBox.tsx
+ | |-IssueList
+ | | |-IssueList.tsx
+ | | |-components
+ | | | |-Item
+ | | | | |-IssueInfo.tsx
+ | | | | |-IssueTitle.tsx
+ | | | |-Item.tsx
+ | | | |-ToolBar
+ | | | | |-Menu.tsx
+ | | | | |-Option.tsx
+ | | | | |-SortOptions.tsx
+ | | | |-ToolBar.tsx
+ |-react-app-env.d.ts
+ |-reportWebVitals.ts
+ |-service
+ | |-api.ts
+ | |-http.ts
+ |-setupTests.ts
+ |-store
+ | |-index.ts
+ | |-slices
+ | | |-paramSlice.ts
+ | | |-toggleSlice.ts
+ |-tailwind.css
+ |-types
+ | |-dataTypes.ts
+ |-utils
+ | |-dateFormat.ts
 
 ```
 
